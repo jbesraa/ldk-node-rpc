@@ -1,0 +1,24 @@
+[package]
+name = "walletrpc-tonic"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "walletrpc-server"
+path = "src/server.rs"
+
+[dependencies]
+tonic = "0.10"
+prost = "0.12"
+tokio = { version = "1.0", features = ["macros", "rt-multi-thread"]  }
+ldk-node = "0.2.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+bip39 = { version = "2.0.0", features = ["rand"] }
+home-dir = "0.1.0"
+directories = "5.0.1"
+anyhow = "1.0.79"
+lazy_static = "1.4.0"
+
+[build-dependencies]
+tonic-build = "0.10"
